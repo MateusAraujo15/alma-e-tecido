@@ -1,283 +1,144 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Alma & Tecido — Moda Artesanal</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Alma & Tecido</title>
 
     <style>
-        :root {
-            --rosa: #ffb6d9;
-            --rosa-claro: #ffe6f3;
-            --bg: #ffffff;
-            --text: #222;
-            --muted: #777;
-            --radius: 14px;
-            --shadow: 0 4px 16px rgba(0,0,0,0.08);
-            --font: "Inter", system-ui, sans-serif;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: var(--font);
-        }
-
         body {
-            background: var(--bg);
-            color: var(--text);
-            overflow-x: hidden;
+            margin: 0;
+            font-family: "Poppins", sans-serif;
+            background: #ffffff;
+            color: #333;
         }
 
-        /* HEADER */
         header {
-            position: fixed;
-            top: 0; left: 0;
-            width: 100%;
-            background: #fff;
-            padding: 18px 40px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            z-index: 10;
-            box-shadow: var(--shadow);
-            animation: fadeDown 0.8s ease;
-        }
-
-        @keyframes fadeDown {
-            from { opacity: 0; transform: translateY(-20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        header .logo {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--rosa);
-        }
-
-        header nav a {
-            margin-left: 24px;
-            text-decoration: none;
-            color: var(--text);
-        }
-
-        header nav a:hover {
-            color: var(--rosa);
-        }
-
-        /* HERO */
-        .hero {
-            padding: 160px 40px 100px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            gap: 40px;
-        }
-
-        .hero-text {
-            max-width: 480px;
-            animation: fadeLeft 0.9s ease;
-        }
-
-        @keyframes fadeLeft {
-            from { opacity: 0; transform: translateX(-40px); }
-            to { opacity: 1; transform: translateX(0); }
-        }
-
-        .hero-text h1 {
-            font-size: 3rem;
-            margin-bottom: 12px;
-        }
-
-        .hero-text p {
-            color: var(--muted);
-            margin-bottom: 22px;
-        }
-
-        .btn {
-            display: inline-block;
-            background: var(--rosa);
-            padding: 14px 26px;
-            color: #fff;
-            border-radius: var(--radius);
-            text-decoration: none;
+            background: #ffebf3;
+            padding: 15px;
+            text-align: center;
+            font-size: 1.7rem;
             font-weight: 600;
-            transition: 0.2s;
+            color: #d14a7b;
         }
 
-        .btn:hover {
-            transform: translateY(-4px);
-            opacity: 0.9;
+        .container {
+            width: 90%;
+            max-width: 1100px;
+            margin: auto;
+            padding: 20px 0;
         }
 
-        .hero img {
-            width: 450px;
-            border-radius: var(--radius);
-            box-shadow: var(--shadow);
-            animation: fadeRight 0.9s ease;
-        }
-
-        @keyframes fadeRight {
-            from { opacity: 0; transform: translateX(40px); }
-            to { opacity: 1; transform: translateX(0); }
-        }
-
-        /* CATALOGO */
-        .catalog {
-            padding: 40px;
-        }
-
-        .catalog h2 {
-            text-align: center;
-            font-size: 2.2rem;
-            margin-bottom: 20px;
-        }
-
-        .grid {
+        .grid-produtos {
             display: grid;
-            gap: 26px;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 18px;
         }
 
-        .item {
-            background: var(--rosa-claro);
-            padding: 16px;
-            text-align: center;
-            border-radius: var(--radius);
-            box-shadow: var(--shadow);
-            animation: fadeUp 1s ease;
-        }
-
-        @keyframes fadeUp {
-            from { opacity: 0; transform: translateY(30px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        .item img {
-            width: 100%;
-            border-radius: var(--radius);
-        }
-
-        .item h3 {
-            margin: 10px 0;
-            font-size: 1.2rem;
-        }
-
-        .item p {
-            color: var(--muted);
-            margin-bottom: 10px;
-        }
-
-        /* IA BOLHA */
-        .chat-ia {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
+        .produto {
             background: white;
-            padding: 14px;
-            border-radius: var(--radius);
-            box-shadow: var(--shadow);
-            width: 260px;
+            border-radius: 16px;
+            padding: 12px;
+            text-align: center;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+            transition: transform 0.2s ease;
+        }
+
+        .produto:hover {
+            transform: translateY(-5px);
+        }
+
+        .produto img {
+            width: 100%;
+            height: 270px;
+            object-fit: cover;
+            border-radius: 12px;
+        }
+
+        .produto h3 {
+            margin: 10px 0 5px;
+        }
+
+        .produto p {
+            margin: 0;
+            color: #666;
+            font-size: 0.95rem;
+        }
+
+        .produto .preco {
+            margin-top: 8px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #d14a7b;
+        }
+
+        footer {
+            margin-top: 30px;
+            text-align: center;
+            padding: 20px;
+            background: #ffebf3;
             font-size: 0.9rem;
-            animation: fadeLeft 0.7s ease;
+            color: #444;
         }
 
-        .chat-ia strong {
-            color: var(--rosa);
-        }
-
-        /* BONEQUINHA */
+        /* Bonequinha animada no canto */
         .bonequinha {
             position: fixed;
-            bottom: 0;
-            left: 10px;
-            width: 160px;
-            animation: wave 2s infinite ease-in-out;
+            right: 15px;
+            bottom: 15px;
+            width: 110px;
+            animation: acenar 2s infinite ease-in-out;
+            z-index: 20;
         }
 
-        @keyframes wave {
-            0% { transform: translateY(0); }
-            50% { transform: translateY(-6px); }
-            100% { transform: translateY(0); }
-        }
-
-        /* FOOTER */
-        footer {
-            margin-top: 60px;
-            padding: 40px;
-            background: var(--rosa-claro);
-            text-align: center;
-            color: var(--muted);
+        @keyframes acenar {
+            0% { transform: rotate(0deg); }
+            50% { transform: rotate(8deg); }
+            100% { transform: rotate(0deg); }
         }
     </style>
 </head>
-
 <body>
 
-    <header>
-        <div class="logo">Alma & Tecido</div>
-        <nav>
-            <a href="#catalogo">Produtos</a>
-            <a href="https://wa.me/5562984106603" target="_blank">Contato</a>
-        </nav>
-    </header>
+<header>Alma & Tecido</header>
 
-    <section class="hero">
-        <div class="hero-text">
-            <h1>Elegância com carinho.</h1>
-            <p>Moda artesanal criada com personalidade e amor, para mulheres que querem estilo com delicadeza.</p>
-            <a class="btn" href="#catalogo">Ver catálogo</a>
+<img class="bonequinha" src="https://i.imgur.com/3rZQKZ7.png" alt="Bonequinha acenando">
+
+<div class="container">
+    <h2 style="color:#d14a7b; margin-bottom: 10px;">Novidades da Semana</h2>
+
+    <div class="grid-produtos">
+
+        <!-- PRODUTO 1 — Vestido estilo FARM -->
+        <div class="produto">
+            <img src="download vestido estilo farm.jfif" alt="Vestido estilo FARM">
+            <h3>Vestido Floral Estilo FARM</h3>
+            <p>Leve, colorido e perfeito para dias quentes. Combina com sandália ou tênis branco.</p>
+            <div class="preco">R$ 159,90</div>
         </div>
 
-        <img src="https://images.pexels.com/photos/179909/pexels-photo-179909.jpeg"
-             alt="Imagem da coleção">
-    </section>
-
-    <section id="catalogo" class="catalog">
-        <h2>Catálogo</h2>
-
-        <div class="grid">
-            <div class="item">
-                <img src="https://images.pexels.com/photos/934070/pexels-photo-934070.jpeg">
-                <h3>Vestido Floral</h3>
-                <p>R$ 89,90</p>
-                <a class="btn" href="https://wa.me/5562984106603">Comprar</a>
-            </div>
-
-            <div class="item">
-                <img src="https://images.pexels.com/photos/3772507/pexels-photo-3772507.jpeg">
-                <h3>Conjunto Casual</h3>
-                <p>R$ 119,90</p>
-                <a class="btn" href="https://wa.me/5562984106603">Comprar</a>
-            </div>
-
-            <div class="item">
-                <img src="https://images.pexels.com/photos/844297/pexels-photo-844297.jpeg">
-                <h3>Saia Midi</h3>
-                <p>R$ 74,90</p>
-                <a class="btn" href="https://wa.me/5562984106603">Comprar</a>
-            </div>
+        <!-- PRODUTO 2 — Camisa Preta Zara -->
+        <div class="produto">
+            <img src="download camisa preta basica estilo zara.jfif" alt="Camisa preta Zara">
+            <h3>Camisa Preta Básica</h3>
+            <p>Minimalista, confortável e elegante. Ideal para looks casuais ou sociais.</p>
+            <div class="preco">R$ 69,90</div>
         </div>
-    </section>
 
-    <!-- BONEQUINHA (desenho livre, parda, fofinha) -->
-    <img class="bonequinha"
-         src="https://i.postimg.cc/Zq3SLyJV/bonequinha-parda.png"
-         alt="bonequinha dando tchau">
+        <!-- PRODUTO 3 — Gola Alta Preta Zara -->
+        <div class="produto">
+            <img src="download gola alta preta png estilo zara.jfif" alt="Gola alta preta Zara">
+            <h3>Blusa Gola Alta Preta</h3>
+            <p>Peça clássica para compor outfits modernos. Excelente para meia-estação.</p>
+            <div class="preco">R$ 89,90</div>
+        </div>
 
-    <!-- IA -->
-    <div class="chat-ia">
-        <strong>IA estilista:</strong><br><br>
-        Você combinaria muito com uma peça rosa pastel!  
-        Quer ver sugestões?
-        <br><br>
-        <a class="btn" style="padding:8px 16px; font-size:0.8rem;" href="#catalogo">Ver sugestões</a>
     </div>
+</div>
 
-    <footer>
-        © 2025 Alma & Tecido — Moda artesanal • Criado com carinho 🧵✨
-    </footer>
+<footer>
+    © 2025 Alma & Tecido — Criado com carinho 💗
+</footer>
 
 </body>
 </html>
