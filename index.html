@@ -82,3 +82,202 @@
 
         @keyframes fadeLeft {
             from { opacity: 0; transform: translateX(-40px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+
+        .hero-text h1 {
+            font-size: 3rem;
+            margin-bottom: 12px;
+        }
+
+        .hero-text p {
+            color: var(--muted);
+            margin-bottom: 22px;
+        }
+
+        .btn {
+            display: inline-block;
+            background: var(--rosa);
+            padding: 14px 26px;
+            color: #fff;
+            border-radius: var(--radius);
+            text-decoration: none;
+            font-weight: 600;
+            transition: 0.2s;
+        }
+
+        .btn:hover {
+            transform: translateY(-4px);
+            opacity: 0.9;
+        }
+
+        .hero img {
+            width: 450px;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            animation: fadeRight 0.9s ease;
+        }
+
+        @keyframes fadeRight {
+            from { opacity: 0; transform: translateX(40px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+
+        /* CATALOGO */
+        .catalog {
+            padding: 40px;
+        }
+
+        .catalog h2 {
+            text-align: center;
+            font-size: 2.2rem;
+            margin-bottom: 20px;
+        }
+
+        .grid {
+            display: grid;
+            gap: 26px;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        }
+
+        .item {
+            background: var(--rosa-claro);
+            padding: 16px;
+            text-align: center;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            animation: fadeUp 1s ease;
+        }
+
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .item img {
+            width: 100%;
+            border-radius: var(--radius);
+        }
+
+        .item h3 {
+            margin: 10px 0;
+            font-size: 1.2rem;
+        }
+
+        .item p {
+            color: var(--muted);
+            margin-bottom: 10px;
+        }
+
+        /* IA BOLHA */
+        .chat-ia {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: white;
+            padding: 14px;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            width: 260px;
+            font-size: 0.9rem;
+            animation: fadeLeft 0.7s ease;
+        }
+
+        .chat-ia strong {
+            color: var(--rosa);
+        }
+
+        /* BONEQUINHA */
+        .bonequinha {
+            position: fixed;
+            bottom: 0;
+            left: 10px;
+            width: 160px;
+            animation: wave 2s infinite ease-in-out;
+        }
+
+        @keyframes wave {
+            0% { transform: translateY(0); }
+            50% { transform: translateY(-6px); }
+            100% { transform: translateY(0); }
+        }
+
+        /* FOOTER */
+        footer {
+            margin-top: 60px;
+            padding: 40px;
+            background: var(--rosa-claro);
+            text-align: center;
+            color: var(--muted);
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="logo">Alma & Tecido</div>
+        <nav>
+            <a href="#catalogo">Produtos</a>
+            <a href="https://wa.me/5562984106603" target="_blank">Contato</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-text">
+            <h1>Elegância com carinho.</h1>
+            <p>Moda artesanal criada com personalidade e amor, para mulheres que querem estilo com delicadeza.</p>
+            <a class="btn" href="#catalogo">Ver catálogo</a>
+        </div>
+
+        <img src="https://images.pexels.com/photos/179909/pexels-photo-179909.jpeg"
+             alt="Imagem da coleção">
+    </section>
+
+    <section id="catalogo" class="catalog">
+        <h2>Catálogo</h2>
+
+        <div class="grid">
+            <div class="item">
+                <img src="https://images.pexels.com/photos/934070/pexels-photo-934070.jpeg">
+                <h3>Vestido Floral</h3>
+                <p>R$ 89,90</p>
+                <a class="btn" href="https://wa.me/5562984106603">Comprar</a>
+            </div>
+
+            <div class="item">
+                <img src="https://images.pexels.com/photos/3772507/pexels-photo-3772507.jpeg">
+                <h3>Conjunto Casual</h3>
+                <p>R$ 119,90</p>
+                <a class="btn" href="https://wa.me/5562984106603">Comprar</a>
+            </div>
+
+            <div class="item">
+                <img src="https://images.pexels.com/photos/844297/pexels-photo-844297.jpeg">
+                <h3>Saia Midi</h3>
+                <p>R$ 74,90</p>
+                <a class="btn" href="https://wa.me/5562984106603">Comprar</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- BONEQUINHA (desenho livre, parda, fofinha) -->
+    <img class="bonequinha"
+         src="https://i.postimg.cc/Zq3SLyJV/bonequinha-parda.png"
+         alt="bonequinha dando tchau">
+
+    <!-- IA -->
+    <div class="chat-ia">
+        <strong>IA estilista:</strong><br><br>
+        Você combinaria muito com uma peça rosa pastel!  
+        Quer ver sugestões?
+        <br><br>
+        <a class="btn" style="padding:8px 16px; font-size:0.8rem;" href="#catalogo">Ver sugestões</a>
+    </div>
+
+    <footer>
+        © 2025 Alma & Tecido — Moda artesanal • Criado com carinho 🧵✨
+    </footer>
+
+</body>
+</html>
